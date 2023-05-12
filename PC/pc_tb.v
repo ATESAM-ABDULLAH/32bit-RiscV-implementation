@@ -19,14 +19,15 @@ module pc_tb;
 
         //Reset
         clk = 0 ; reset = 1; #10
-        reset = 0;
+        reset=0;
 
         //PC+4
-        branch = 0;#10
+        branch = 0;#20
 
         //Jump
-        branch = 1;jump_offset = 196;#10
-        branch = 1;jump_offset = 800;#10
+        branch = 1;
+        jump_offset = 196;#10
+        jump_offset = 800;#10
         
         $finish;
     end

@@ -1,0 +1,28 @@
+Note: rd, rs1, rs2 are registers, imm is an immediate value, and Memory represents the system's memory.
+
+R-type Instructions:
+add   rd, rs1, rs2    // Add:   rd = rs1 + rs2
+sub   rd, rs1, rs2    // Subtract:   rd = rs1 - rs2
+and   rd, rs1, rs2    // Bitwise AND:   rd = rs1 & rs2
+or    rd, rs1, rs2    // Bitwise OR:   rd = rs1 | rs2
+
+I-type Instructions:
+addi  rd, rs1, imm    // Add immediate:   rd = rs1 + imm
+lw    rd, imm(rs1)    // Load word:   rd = Memory[rs1 + imm]
+lb    rd, imm(rs1)    // Load byte:   rd = Memory[rs1 + imm]
+
+S-type Instructions:
+sw    rs2, imm(rs1)   // Store word:   Memory[rs1 + imm] = rs2
+sb    rs2, imm(rs1)   // Store byte:   Memory[rs1 + imm] = rs2[7:0]
+
+SB-type Instructions:
+beq   rs1, rs2, imm   // Branch if equal:   PC = (rs1 == rs2) ? PC + imm : PC + 4
+blt   rs1, rs2, imm   // Branch if less than:   PC = (rs1 < rs2) ? PC + imm : PC + 4
+bge   rs1, rs2, imm   // Branch if greater or equal:   PC = (rs1 >= rs2) ? PC + imm : PC + 4
+
+UJ-type Instructions:
+jal   rd, imm         // Jump and Link:   rd = PC + 4; PC = PC + imm
+
+I-type (Jump Register) Instructions:
+jalr  rd, rs1, imm    // Jump and Link Register:   rd = PC + 4; PC = (rs1 + imm) & ~1
+

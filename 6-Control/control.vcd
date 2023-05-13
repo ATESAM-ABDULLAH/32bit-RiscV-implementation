@@ -1,0 +1,132 @@
+$date
+	Sat May 13 23:40:23 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module control_tb $end
+$var wire 1 ! reg_write $end
+$var wire 1 " mem_write $end
+$var wire 2 # mem_to_reg [1:0] $end
+$var wire 1 $ mem_read $end
+$var wire 1 % branch $end
+$var wire 1 & alu_src $end
+$var wire 2 ' alu_op [1:0] $end
+$var reg 1 ( clk $end
+$var reg 7 ) opcode [6:0] $end
+$scope module uut $end
+$var wire 1 ( clk $end
+$var wire 7 * opcode [6:0] $end
+$var reg 2 + alu_op [1:0] $end
+$var reg 1 & alu_src $end
+$var reg 1 % branch $end
+$var reg 1 $ mem_read $end
+$var reg 2 , mem_to_reg [1:0] $end
+$var reg 1 " mem_write $end
+$var reg 1 ! reg_write $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx ,
+bx +
+bx *
+bx )
+0(
+bx '
+x&
+x%
+x$
+bx #
+x"
+x!
+$end
+#5000
+1(
+#10000
+0(
+b110011 )
+b110011 *
+#15000
+b10 '
+b10 +
+0%
+0"
+0$
+1!
+b0 #
+b0 ,
+0&
+1(
+#20000
+0(
+b100011 )
+b100011 *
+#25000
+b0 '
+b0 +
+1"
+0!
+bx #
+bx ,
+1&
+1(
+#30000
+0(
+b10011 )
+b10011 *
+#35000
+0"
+1!
+b0 #
+b0 ,
+0&
+1(
+#40000
+0(
+b11 )
+b11 *
+#45000
+1$
+b1 #
+b1 ,
+1&
+1(
+#50000
+0(
+b1100011 )
+b1100011 *
+#55000
+b1 '
+b1 +
+1%
+0$
+0!
+bx #
+bx ,
+0&
+1(
+#60000
+0(
+b1101111 )
+b1101111 *
+#65000
+b11 '
+b11 +
+1!
+b0 #
+b0 ,
+1(
+#70000
+0(
+b1100111 )
+b1100111 *
+#75000
+1&
+1(
+#80000
+0(

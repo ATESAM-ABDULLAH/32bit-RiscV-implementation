@@ -11,11 +11,11 @@ output reg [9:0] pc_out;	//10bit address -> 2^10 index -> 1024 bytes
 always@(posedge clk)begin
 
 	if(reset) 		//reset pc_output
-		pc_out <= 0;
+		pc_out = 0;
 	else if(branch) //jump to current address + offset
-		pc_out <= pc_out + jump_offset;
+		pc_out = pc_out + jump_offset;
 	else      		//keep on increasing pc by 4 -> to skip over 1 word ~ 4 bytes
-		pc_out <= pc_out + 4;
+		pc_out = pc_out + 4;
 end
  
 endmodule

@@ -19,10 +19,10 @@ always @(posedge clk ) begin
 
     //Logic
     if(write) //write to rd
-		Reg[rd]<=write_data;
+		Reg[rd] = write_data;
 	else begin         //read rs1,rs2
-		out1<=Reg[rs1];
-		out2<=Reg[rs2];
+		out1 = Reg[rs1];
+		out2 = Reg[rs2];
 	end
 end
 

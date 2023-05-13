@@ -13,7 +13,7 @@ always@(posedge clk)begin
     memory[0] = 32'b00000000000100010000000010110011; // add x1 x1 x2
     
     //output instruction at pc_out address
-    insn_out <= memory[pc_out]; 
+    insn_out = memory[pc_out]; 
 end
 
 endmodule

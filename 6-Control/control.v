@@ -1,4 +1,6 @@
 `timescale 1ns / 1ps
+//control- Control Unit: map opcode to control signals 
+
 module control(clk,opcode,branch,mem_read,mem_write,alu_src,reg_write,mem_to_reg,alu_op);
 input clk;                  //System clock
 input [6:0] opcode;         //opcode from instruction

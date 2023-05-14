@@ -10,7 +10,7 @@ input clk;                  //System clock
 input [1:0] mem_to_reg;           //control signal from Control
 input [31:0] alu_result;    //Reg[rs2] from Register File
 input [31:0] mem_data;      //Immediate from Decoder
-input [31:0] pc_4;          //pc from PC add 4 to it
+input [9:0] pc_4;          //pc from PC add 4 to it
 output reg [31:0] selected; //MUX output
 
 always @(posedge clk ) begin

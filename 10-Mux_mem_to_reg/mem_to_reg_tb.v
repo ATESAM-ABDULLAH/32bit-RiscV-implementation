@@ -6,7 +6,7 @@ module mem_to_reg_tb ();
     reg [1:0] mem_to_reg;
     reg [31:0] alu_result;
     reg [31:0] mem_data;
-    reg [31:0] pc_4;
+    reg [9:0] pc_4;
 
     //Outputs
     wire [31:0] selected;

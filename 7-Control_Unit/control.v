@@ -6,7 +6,7 @@ input clk;                  //System clock
 input [6:0] opcode;         //opcode from instruction
 output reg branch,mem_read,mem_write,alu_src,reg_write; //control signals
 output reg [1:0] mem_to_reg;//control signal
-output reg [1:0] alu_op;    //control signal for ALU
+output reg [2:0] alu_op;    //control signal for ALU
 
 parameter r_type = 7'b0110011;//add,sub,and,or
 parameter s_type = 7'b0100011;//sw,sb

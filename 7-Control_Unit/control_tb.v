@@ -8,7 +8,7 @@ module control_tb ();
     //Outputs
     wire branch,mem_read,mem_write,alu_src,reg_write;
     wire [1:0] mem_to_reg;
-    wire [1:0] alu_op;    
+    wire [3:0] alu_op;    
 
     control uut (clk,opcode,branch,mem_read,mem_write,alu_src,reg_write,mem_to_reg,alu_op);
 

@@ -22,7 +22,7 @@ always@(posedge clk)begin
 	else if(branch && zero_flag && mem_to_reg==2'bx) 			//b_type: PC = PC + imm
 		pc_out = pc_out + immediate;
 
-	else if(branch && mem_to_reg==2'b10) 	//al: PC = PC + imm
+	else if(branch && mem_to_reg==2'b10) 	//jal: PC = PC + imm
 		pc_out = pc_out + immediate;
 
 	else if (branch && mem_to_reg==2'b11)	//jalr: PC = (rs1 + imm) 

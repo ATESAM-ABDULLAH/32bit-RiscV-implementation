@@ -2,7 +2,7 @@
 
 module reg_file_tb();
     //Inputs
-    reg clk,write;                
+    reg clk,reg_write;                
     reg [31:0] write_data;    
     reg [4:0] rs1,rs2,rd; 
 
@@ -21,13 +21,13 @@ module reg_file_tb();
         //Initialize inputs
         clk=0;#10
 
-        write=0;//read
+        reg_write=0;//read
         rs1=1;rs2=2;#10
 
-        write=1;//write
+        reg_write=1;//write
         rd=3;write_data=7;#10
 
-        write=0;//read written data
+        reg_write=0;//read written data
         rs1=3;rs2=4;#10
 
         $finish;

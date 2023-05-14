@@ -1,0 +1,53 @@
+$date
+	Sun May 14 12:03:14 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module mem_to_reg_tb $end
+$var wire 32 ! selected [31:0] $end
+$var reg 32 " alu_result [31:0] $end
+$var reg 1 # clk $end
+$var reg 32 $ mem_data [31:0] $end
+$var reg 1 % mem_to_reg $end
+$scope module uut $end
+$var wire 32 & alu_result [31:0] $end
+$var wire 1 # clk $end
+$var wire 32 ' mem_data [31:0] $end
+$var wire 1 % mem_to_reg $end
+$var reg 32 ( selected [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx (
+b10100 '
+b1111 &
+x%
+b10100 $
+0#
+b1111 "
+bx !
+$end
+#5000
+1#
+#10000
+0#
+0%
+#15000
+b1111 !
+b1111 (
+1#
+#20000
+0#
+1%
+#25000
+b10100 !
+b10100 (
+1#
+#30000
+0#

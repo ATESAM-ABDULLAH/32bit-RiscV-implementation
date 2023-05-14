@@ -14,9 +14,12 @@ always @(posedge clk) begin
 	//Temp data for debug
 	Reg[1]=5;
 	Reg[2]=6;
-	Reg[3]=0;
-	Reg[4]=6;
-	Reg[5]=9;
+	Reg[3]=1;
+	Reg[4]=2;
+	Reg[5]=11;
+	Reg[6]=1;
+	Reg[7]=3;
+	Reg[8]=4;
 
     //Reg[0] is hardcoded 0
 	Reg[0]=0;

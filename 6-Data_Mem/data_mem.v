@@ -12,8 +12,6 @@ output reg [31:0] data_out; //output data for read
 
 reg [7:0] memory [1023:0];  // Data memory ibyte x 1024 index = 1024 byte memory
 
-
-
 always @(*) begin
     //Temp data for debug
     memory[0]=8'h0;
@@ -27,11 +25,9 @@ always @(*) begin
     memory[7]=8'h1;//h10a0 = 4256
 
     memory[8]=8'h0;
-    memory[8]=8'h7;
-    memory[8]=8'h0;
-    memory[8]=8'h3;//h3070 = 12400
-
-
+    memory[9]=8'h7;
+    memory[10]=8'h2;
+    memory[11]=8'h3;//h3270 = 12912
 
     //Logic
     case(size)
@@ -45,16 +41,20 @@ always @(*) begin
     1:
     begin
         if(mem_write)//write byte by byte
+        begin
             memory[address] = data_in[7:0];
             memory[address+1] = data_in[15:8];
             memory[address+2] = data_in[23:16];
             memory[address+3] = data_in[31:24];
+        end
 
         if(mem_read)//read byte by byte
+        begin
             data_out[7:0] = memory[address];
             data_out[15:8] = memory[address+1]; 
             data_out[23:16] = memory[address+2]; 
             data_out[31:24] = memory[address+3];
+        end
     end
     endcase
 

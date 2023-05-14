@@ -1,14 +1,16 @@
 `timescale 1ns / 1ps
 //decoder- Decoder: split 32bit instruction into parts
 
-module decoder (clk,instruction,func3,func7,opcode,rs1,rs2,rd,imm);
+module decoder (clk,instruction,func3,func7,opcode,rs1,rs2,rd,imm,size);
 input clk;                  //System clock
 input [31:0] instruction;   //instruction from instruction memory
+
 output reg [2:0] func3;     
 output reg [6:0] func7;  
 output reg [6:0] opcode;    //opcode for control
 output reg [4:0] rs1,rs2,rd;//read_reg1,read_reg2,write_reg
 output reg [20:0] imm;      //immediate -> max 20bit for Jtype
+output reg size;            //size of data: 0=byte , 1=word
 
 parameter r_type = 7'b0110011;//add,sub,and,or
 parameter s_type = 7'b0100011;//sw,sb
@@ -20,6 +22,11 @@ parameter jalr   = 7'b1100111;//jalr
 
 always @(posedge clk ) begin
     opcode = instruction[6:0]; //all instructions have opcode
+    size = 1;//default size is word
+
+    //Make all outputs 0 by default -> no garbage data
+    func3=0;func7=0;imm=0;rs1=0;rs2=0;rd=0;
+
     //all regs (size N) not used are turned to N'bx
 
     case(opcode)
@@ -40,6 +47,9 @@ always @(posedge clk ) begin
         imm[11:5] = instruction[31:25];
         rd = 5'bx;
         func7 = 7'bx;
+
+        if(func3 == 3'b000)//sb
+            size=0;
     end
     i_type:
     begin
@@ -58,6 +68,9 @@ always @(posedge clk ) begin
         rs2 = instruction[24:20];
         imm[11:0] = instruction[31:25];
         func7 = 7'bx;
+
+        if(func3 == 3'b000)//lb
+            size=0;
     end
     b_type://shift right one
     begin

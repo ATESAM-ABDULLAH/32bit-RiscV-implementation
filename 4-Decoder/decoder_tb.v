@@ -12,9 +12,10 @@ module decoder_tb ();
     wire [4:0] rs1;
     wire [4:0] rs2;
     wire [4:0] rd;
-    wire [20:0] imm;      
+    wire [20:0] imm;     
+    wire size; 
 
-    decoder uut (clk,instruction,func3,func7,opcode,rs1,rs2,rd,imm);
+    decoder uut (clk,instruction,func3,func7,opcode,rs1,rs2,rd,imm,size);
 
     //Clock toggles every 5ns
     always#5 clk=~clk;
@@ -29,6 +30,7 @@ module decoder_tb ();
         instruction = 32'b00000000001000001000000010110011;#10 // add x1 x1 x2
         instruction = 32'b00000000001000001000000011100011;#10 // beq x1 x2 2048
         instruction = 32'b00000000000010000000000011101111;#10 // jal x1 262144
+        instruction = 32'b00000000001000001000010000100011;#10 // sw 2 , 8(1)
 
         $finish;
     end

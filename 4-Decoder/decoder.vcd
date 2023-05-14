@@ -1,5 +1,5 @@
 $date
-	Sun May 14 11:38:08 2023
+	Sun May 14 14:42:02 2023
 $end
 $version
 	Icarus Verilog
@@ -8,30 +8,33 @@ $timescale
 	1ps
 $end
 $scope module decoder_tb $end
-$var wire 5 ! rs2 [4:0] $end
-$var wire 5 " rs1 [4:0] $end
-$var wire 5 # rd [4:0] $end
-$var wire 7 $ opcode [6:0] $end
-$var wire 21 % imm [20:0] $end
-$var wire 7 & func7 [6:0] $end
-$var wire 3 ' func3 [2:0] $end
-$var reg 1 ( clk $end
-$var reg 32 ) instruction [31:0] $end
+$var wire 1 ! size $end
+$var wire 5 " rs2 [4:0] $end
+$var wire 5 # rs1 [4:0] $end
+$var wire 5 $ rd [4:0] $end
+$var wire 7 % opcode [6:0] $end
+$var wire 21 & imm [20:0] $end
+$var wire 7 ' func7 [6:0] $end
+$var wire 3 ( func3 [2:0] $end
+$var reg 1 ) clk $end
+$var reg 32 * instruction [31:0] $end
 $scope module uut $end
-$var wire 1 ( clk $end
-$var wire 32 * instruction [31:0] $end
-$var reg 3 + func3 [2:0] $end
-$var reg 7 , func7 [6:0] $end
-$var reg 21 - imm [20:0] $end
-$var reg 7 . opcode [6:0] $end
-$var reg 5 / rd [4:0] $end
-$var reg 5 0 rs1 [4:0] $end
-$var reg 5 1 rs2 [4:0] $end
+$var wire 1 ) clk $end
+$var wire 32 + instruction [31:0] $end
+$var reg 3 , func3 [2:0] $end
+$var reg 7 - func7 [6:0] $end
+$var reg 21 . imm [20:0] $end
+$var reg 7 / opcode [6:0] $end
+$var reg 5 0 rd [4:0] $end
+$var reg 5 1 rs1 [4:0] $end
+$var reg 5 2 rs2 [4:0] $end
+$var reg 1 ! size $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
+bx 2
 bx 1
 bx 0
 bx /
@@ -40,67 +43,103 @@ bx -
 bx ,
 bx +
 bx *
-bx )
-0(
+0)
+bx (
 bx '
 bx &
 bx %
 bx $
 bx #
 bx "
-bx !
+x!
 $end
 #5000
-1(
-#10000
-0(
-b1000001000000010110011 )
-b1000001000000010110011 *
-#15000
+b0 $
+b0 0
+b0 "
+b0 2
+b0 #
+b0 1
 b0 &
-b0 ,
-b10 !
-b10 1
-b1 "
-b1 0
+b0 .
 b0 '
-b0 +
+b0 -
+b0 (
+b0 ,
+1!
+1)
+#10000
+0)
+b1000001000000010110011 *
+b1000001000000010110011 +
+#15000
+b10 "
+b10 2
 b1 #
-b1 /
-b110011 $
-b110011 .
-1(
+b1 1
+b1 $
+b1 0
+b110011 %
+b110011 /
+1)
 #20000
-0(
-b1000001000000011100011 )
+0)
 b1000001000000011100011 *
+b1000001000000011100011 +
 #25000
-bx &
-bx ,
-bx #
-bx /
-b0xxxxxxxx010000000000 %
-b0xxxxxxxx010000000000 -
-b1100011 $
-b1100011 .
-1(
-#30000
-0(
-b10000000000011101111 )
-b10000000000011101111 *
-#35000
-bx !
-bx 1
-bx "
-bx 0
 bx '
-bx +
-b1000000000000000000 %
-b1000000000000000000 -
+bx -
+b10000000000 &
+b10000000000 .
+bx $
+bx 0
+b10 "
+b10 2
 b1 #
-b1 /
-b1101111 $
-b1101111 .
-1(
+b1 1
+b1100011 %
+b1100011 /
+1)
+#30000
+0)
+b10000000000011101111 *
+b10000000000011101111 +
+#35000
+bx (
+bx ,
+b1 $
+b1 0
+bx "
+bx 2
+bx #
+bx 1
+b1000000000000000000 &
+b1000000000000000000 .
+bx '
+bx -
+b1101111 %
+b1101111 /
+1)
 #40000
-0(
+0)
+b1000001000010000100011 *
+b1000001000010000100011 +
+#45000
+0!
+bx $
+bx 0
+b10 "
+b10 2
+b1 #
+b1 1
+b1000 &
+b1000 .
+bx '
+bx -
+b0 (
+b0 ,
+b100011 %
+b100011 /
+1)
+#50000
+0)

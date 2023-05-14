@@ -29,7 +29,7 @@ always@(posedge clk)begin
 		pc_out = immediate + reg_out1;
 		
 	else    		//no jump
-		pc_out = pc_out + 4;
+		pc_out = pc_out + 1;
 end
  
 endmodule

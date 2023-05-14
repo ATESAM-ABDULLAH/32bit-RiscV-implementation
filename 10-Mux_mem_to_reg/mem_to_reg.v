@@ -19,6 +19,6 @@ always @(posedge clk ) begin
     else if (mem_to_reg==0)
         selected = alu_result;
     else if (mem_to_reg==2 || mem_to_reg==3)
-        selected = pc_4 + 3'b100;//pc + 4
+        selected = pc_4 + 1;//pc + 1
 end
 endmodule

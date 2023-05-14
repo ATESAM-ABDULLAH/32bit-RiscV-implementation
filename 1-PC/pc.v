@@ -5,7 +5,7 @@ module pc(clk,reset,branch,jump_offset,pc_out);
 input clk;		           	//clock
 input reset;               	//reset whole circuit to default
 input branch;              	//bool 0=nojump , 1=jump usin jump_offset
-input [19:0] jump_offset;  	//immediate -> max 20bits for J type
+input [20:0] jump_offset;  	//immediate -> max 20bits for J type
 output reg [9:0] pc_out;	//10bit address -> 2^10 index -> 1024 bytes
 
 always@(posedge clk)begin

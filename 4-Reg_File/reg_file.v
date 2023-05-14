@@ -13,14 +13,11 @@ reg [31:0] Reg [31:0];      //32 registers each 32bit
 always @(posedge clk ) begin
     //Reg[0] is hardcoded 0
 	Reg[0]=0;
-    //Temp data
-	Reg[1]=5;
-	Reg[2]=6;
 
     //Logic
-    if(reg_write) //write to rd
+    if(reg_write) 	//write to rd
 		Reg[rd] = write_data;
-	else begin         //read rs1,rs2
+	else begin  	//read rs1,rs2
 		out1 = Reg[rs1];
 		out2 = Reg[rs2];
 	end

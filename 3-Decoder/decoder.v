@@ -20,7 +20,7 @@ parameter b_type = 7'b1100011;//beq,bge,blt
 parameter jal    = 7'b1101111;//jal
 parameter jalr   = 7'b1100111;//jalr
 
-always @(posedge clk ) begin
+always @(*) begin
     opcode = instruction[6:0]; //all instructions have opcode
     size = 1;//default size is word
 

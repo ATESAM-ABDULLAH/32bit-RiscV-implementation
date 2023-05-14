@@ -13,7 +13,7 @@ input [31:0] mem_data;      //Immediate from Decoder
 input [9:0] pc_4;          //pc from PC add 4 to it
 output reg [31:0] selected; //MUX output
 
-always @(posedge clk ) begin
+always @(posedge clk) begin
     if(mem_to_reg==1)
         selected = mem_data;
     else if (mem_to_reg==0)

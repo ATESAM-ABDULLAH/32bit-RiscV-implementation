@@ -30,6 +30,8 @@ always@(posedge clk)begin
 		
 	else    		//no jump
 		pc_out = pc_out + 1;
+
+
 end
  
 endmodule

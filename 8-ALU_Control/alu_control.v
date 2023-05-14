@@ -16,7 +16,10 @@ parameter b_type = 7'b1100011;//beq,bge,blt
 parameter jal    = 7'b1101111;//jal
 parameter jalr   = 7'b1100111;//jalr
 
-always @(posedge clk ) begin
+always @(*) begin
+    //Default value for debug
+    alu_control=3'bx;
+    
     case(opcode)
     r_type:
     begin

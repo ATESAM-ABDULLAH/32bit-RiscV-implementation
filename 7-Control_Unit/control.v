@@ -1,12 +1,11 @@
 `timescale 1ns / 1ps
 //control- Control Unit: map opcode to control signals 
 
-module control(clk,opcode,branch,mem_read,mem_write,alu_src,reg_write,mem_to_reg,alu_op);
+module control(clk,opcode,branch,mem_read,mem_write,alu_src,reg_write,mem_to_reg);
 input clk;                  //System clock
 input [6:0] opcode;         //opcode from instruction
 output reg branch,mem_read,mem_write,alu_src,reg_write; //control signals
 output reg [1:0] mem_to_reg;//control signal
-output reg [2:0] alu_op;    //control signal for ALU
 
 parameter r_type = 7'b0110011;//add,sub,and,or
 parameter s_type = 7'b0100011;//sw,sb
@@ -17,7 +16,7 @@ parameter jal    = 7'b1101111;//jal
 parameter jalr   = 7'b1100111;//jalr
 
 
-always @(posedge clk ) begin
+always @(*) begin
     case(opcode)
     r_type:
     begin
@@ -27,7 +26,6 @@ always @(posedge clk ) begin
         mem_read = 0;
         mem_write = 0;
         branch = 0;
-        alu_op = 2'b10;
 	end
     s_type:
     begin
@@ -37,7 +35,6 @@ always @(posedge clk ) begin
         mem_read = 0;
         mem_write = 1;
         branch = 0;
-        alu_op = 2'b00;
 	end
     i_type:
     begin
@@ -47,7 +44,6 @@ always @(posedge clk ) begin
         mem_read = 0;
         mem_write = 0;
         branch = 0;
-        alu_op = 2'b00;
 	end
     l_type:
     begin
@@ -57,7 +53,6 @@ always @(posedge clk ) begin
         mem_read = 1;
         mem_write = 0;
         branch = 0;
-        alu_op = 2'b00;
 	end
     b_type:
     begin
@@ -67,7 +62,6 @@ always @(posedge clk ) begin
         mem_read = 0;
         mem_write = 0;
         branch = 1;
-        alu_op = 2'b01;
 	end
     jal:
     begin
@@ -76,8 +70,7 @@ always @(posedge clk ) begin
         reg_write = 1;
         mem_read = 0;
         mem_write = 0;
-        branch = 1;//depends 
-        alu_op = 2'b11;
+        branch = 1;
 	end
     jalr:
     begin
@@ -86,8 +79,7 @@ always @(posedge clk ) begin
         reg_write = 1;
         mem_read = 0;
         mem_write = 0;
-        branch = 1;//depends
-        alu_op = 2'b11;
+        branch = 1;
 	end
     endcase
 end

@@ -27,7 +27,7 @@ module processor_tb ();
         clk=0;reset=1;#10
         reset=0;
 
-        #125 // 14 cycles
+        #140 // 14 cycles
 
         $finish;
     end

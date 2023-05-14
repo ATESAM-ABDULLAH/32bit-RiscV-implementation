@@ -10,7 +10,7 @@ input [31:0] reg_out2;      //Reg[rs2] from Register File
 input [20:0] imm;           //Immediate from Decoder
 output reg [31:0] selected; //MUX output
 
-always @(posedge clk ) begin
+always @(*) begin
     if(alu_src==1)
         selected = imm;
     else if (alu_src==0)

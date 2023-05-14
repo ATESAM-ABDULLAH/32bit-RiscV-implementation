@@ -25,7 +25,8 @@ always @(*) begin
     size = 1;//default size is word
 
     //Make all outputs 0 by default -> no garbage data
-    func3=0;func7=0;imm=0;rs1=0;rs2=0;rd=0;
+    func3=3'bx;func7=7'bx;imm=21'b0;
+    rs1=5'bx;rs2=3'bx;rd=5'bx;
 
     //all regs (size N) not used are turned to N'bx
 
@@ -56,8 +57,7 @@ always @(*) begin
         rd = instruction[11:7];
         func3 = instruction[14:12];
         rs1 = instruction[19:15];
-        rs2 = instruction[24:20];
-        imm[11:0] = instruction[31:25];
+        imm[11:0] = instruction[31:20];
         func7 = 7'bx;
     end
     l_type:
@@ -65,8 +65,7 @@ always @(*) begin
         rd = instruction[11:7];
         func3 = instruction[14:12];
         rs1 = instruction[19:15];
-        rs2 = instruction[24:20];
-        imm[11:0] = instruction[31:25];
+        imm[11:0] = instruction[31:20];
         func7 = 7'bx;
 
         if(func3 == 3'b000)//lb
@@ -107,8 +106,7 @@ always @(*) begin
         rd = instruction[11:7];
         func3 = instruction[14:12];
         rs1 = instruction[19:15];
-        rs2 = instruction[24:20];
-        imm[11:0] = instruction[31:25];
+        imm[11:0] = instruction[31:20];
         func7 = 7'bx;
     end
     endcase

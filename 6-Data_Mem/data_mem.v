@@ -14,8 +14,26 @@ reg [7:0] memory [1023:0];  // Data memory ibyte x 1024 index = 1024 byte memory
 
 
 
-always @(posedge clk ) begin
+always @(*) begin
+    //Temp data for debug
+    memory[0]=8'h0;
+    memory[1]=8'h0;
+    memory[2]=8'h1;
+    memory[3]=8'h0;//h0100 = 256
 
+    memory[4]=8'h0;
+    memory[5]=8'ha;
+    memory[6]=8'h0;
+    memory[7]=8'h1;//h10a0 = 4256
+
+    memory[8]=8'h0;
+    memory[8]=8'h7;
+    memory[8]=8'h0;
+    memory[8]=8'h3;//h3070 = 12400
+
+
+
+    //Logic
     case(size)
     0:      //byte
     begin

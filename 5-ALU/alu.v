@@ -18,7 +18,7 @@ input[2:0] alu_control;         //control for operation selection
 output reg [31:0] result;   //output of ALU
 output reg zero_flag;                //flag if beq,blt,bge TRUE
 
-always @(posedge clk ) begin
+always @(*) begin
         // Operating based on control input
         case(alu_control)
 
@@ -29,28 +29,28 @@ always @(posedge clk ) begin
             3'b100:                       //A<B
             begin 
                 if(in1<in2)
-                    result = 0;
+                    result = 32'b0;
                 else
                     result = 32'bx;
             end
             3'b101: 
             begin 
                 if(in1>=in2)            //A>=B
-                    result = 0;
+                    result = 32'b0;
                 else
                     result = 32'bx;
             end
             3'b011:                     //A==B
             begin 
                 if(in1==in2)
-                    result = 0;
+                    result = 32'b0;
                 else
                     result = 32'bx;
             end
         endcase
 
         // Setting Zero_flag if ALU_result is zero
-        if (result == 0)
+        if (result == 32'b0)
             zero_flag = 1'b1;
         else
             zero_flag = 1'b0;

@@ -1,0 +1,53 @@
+$date
+	Sun May 14 11:47:07 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module alu_src_tb $end
+$var wire 32 ! selected [31:0] $end
+$var reg 1 " alu_src $end
+$var reg 1 # clk $end
+$var reg 21 $ imm [20:0] $end
+$var reg 32 % reg_out2 [31:0] $end
+$scope module uut $end
+$var wire 1 " alu_src $end
+$var wire 1 # clk $end
+$var wire 21 & imm [20:0] $end
+$var wire 32 ' reg_out2 [31:0] $end
+$var reg 32 ( selected [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx (
+b1111 '
+b10100 &
+b1111 %
+b10100 $
+0#
+x"
+bx !
+$end
+#5000
+1#
+#10000
+0#
+0"
+#15000
+b1111 !
+b1111 (
+1#
+#20000
+0#
+1"
+#25000
+b10100 !
+b10100 (
+1#
+#30000
+0#

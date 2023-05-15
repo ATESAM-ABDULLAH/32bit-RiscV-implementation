@@ -30,26 +30,49 @@ This implementation includes support for the following instructions only:
 ### I-type (Jump Register) Instructions
 - `jalr rd, rs1, imm`: Performs a jump and link register operation. Stores the address of the next instruction in `rd` and updates the program counter (PC = (rs1 + imm) & ~1)
 
-**NOTE: `lw` and `lb` instructions are called L type in code. They are I type with some diffrences, so i renamed them to L type for distinction.** 
+**NOTE: `lw` and `lb` instructions are called L type in code. They are I type with some differences, so i renamed them to L type for distinction.** 
 
 ## System Architecture
 These diagrams illustrate the system hardware design, instruction format, instruction encoding, and control unit, all of which are integral parts of the system architecture. They collectively define how the RISC-V implementation operates and interacts with software and external devices.
 
 ### System Hardware Design
 The system hardware design, as illustrated in the Design diagram, includes the various hardware components that make up the RISC-V implementation.
+
 ![Design](./Images/Design.png)
 
 ### Instruction Format
 The Instruction Format diagram showcases the structure and format of the instructions in the RISC-V ISA. 
+
 ![Format](./Images/Instruction_format.png)
 
 ### Instruction Encoding
 The Instruction Encoding diagram depicts the specific encoding schemes used to represent the instructions in binary format. 
+
 ![Encoding](./Images/Instruction_encoding.png)
 
 ### Control Unit
 The Control diagram provides an overview of the control unit responsible for coordinating and controlling the execution of instructions in the processor. 
+
 ![Control](./Images/Control.png)
+
+## File Structure
+Root Directory
+
+- Module name   //Parts of system
+  - module.v    //Module
+  - module_tb.v //Testbench
+  - ...
+
+- ISA.txt
+- Images
+- LICENSE
+- PROCESSOR     //Main Processor
+  - processor.v
+  - processor_tb.v
+- README.md
+
+
+
 
 ## Usage
 

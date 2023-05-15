@@ -1,0 +1,30 @@
+- .gitignore
+- 1-PC
+  - pc.v
+  - pc.vcd
+- 2-Insn_Mem
+  - insn_mem.v
+  - insn_mem_tb.V
+- [Module name]
+  -[module].v
+  -[test bench].v
+- ...
+- 10-Mux_mem_to_reg
+  - mem_to_reg.v
+  - mem_to_reg_tb.v
+- CE222-Project Guideline.pdf
+- ISA.txt
+- Images
+  - Alu_control.png
+  - Control.png
+  - Design.png
+  - Instruction_encoding.png
+  - Instruction_format.png
+  - Register_convention.png
+- LICENSE
+- PROCESSOR
+  - processor.v
+  - processor.vcd
+  - processor.vvp
+  - processor_tb.v
+- README.md

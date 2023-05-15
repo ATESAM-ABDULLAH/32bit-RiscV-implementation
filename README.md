@@ -62,7 +62,6 @@ Root Directory
   - module.v    //Module
   - module_tb.v //Testbench
   - ...
-
 - ISA.txt
 - Images
 - LICENSE

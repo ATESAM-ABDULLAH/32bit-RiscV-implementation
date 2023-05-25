@@ -28,6 +28,7 @@ module pc_tb;
 
         branch = 1;
         //b_type
+        mem_to_reg = 2'bx;
         zero_flag=1;
         immediate = 196;#10
 

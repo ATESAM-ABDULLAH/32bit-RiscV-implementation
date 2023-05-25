@@ -12,7 +12,7 @@
 module processor (clk,reset,pc,insn,imm_out,alu_control,reg_out1,reg_out2,alu_result,flag,read_data);
 input clk;          //System clock
 
-//Processor output
+//Processor output -> for Testing
 output [9:0] pc;            //PC
 output [31:0] insn;         //Reg file
 output [20:0] imm_out;      //Decoder
@@ -32,6 +32,7 @@ assign reg_out2 = out2;
 assign alu_result = result;
 assign flag = zero_flag;
 assign read_data = data_out;
+//---------------------------------------------------------------------------------------
 
 //PC inputs
 input reset;
